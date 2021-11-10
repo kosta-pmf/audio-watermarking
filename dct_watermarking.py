@@ -104,8 +104,8 @@ def dctb1_watermark_embedding(signal, watermark, sr=16000, lt=23, lw=1486, band_
     lG1 - number of DCT coefficients in group G1
     lG2 - number of DCT coefficients in group G2
   Returns:
-    1D numpy array - watermarked signal
-    a list of 1D numpy arrays - indices of G1 coefficients for each frame (a secret key for watermark detection)
+    watermarked signal - 1D numpy array
+    indices of G1 coefficients for each frame (a secret key for watermark detection) - list of 1D numpy arrays
   '''
   lf = lt+lw
   signal_length = len(signal)
@@ -150,7 +150,7 @@ def dctb1_watermark_detection(watermarked_signal, G1_inds, lt=23, lw=1486, band_
     lw - number of samples for embedding in a frame
     band_size - number of DCT coefficients in a band
   Returns:
-    1D numpy array - detected watermark
+    detected watermark - 1D numpy array
   '''
   lf = lt+lw
   signal_length = len(signal)

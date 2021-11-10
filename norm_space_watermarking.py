@@ -5,9 +5,12 @@ from scipy.fftpack import dct, idct
 
 def norm_space_watermark_embedding(signal, watermark, delta=0.03):
   '''
-  signal - 1D numpy array
-  watermark - 1D numpy array of ones and zeros
-  delta - parameter of the algorithm controlling watermark imperceptibility and robustness. Higher delta makes algorithm more robust, but lowers audio signal quality.
+  Parameters:
+    signal - 1D numpy array
+    watermark - 1D numpy array of ones and zeros
+    delta - parameter of the algorithm controlling watermark imperceptibility and robustness. Higher delta makes algorithm more robust, but lowers audio signal quality.
+  Returns:
+    watermarked signal - 1D numpy array
   '''
 
   segments = np.array_split(signal, len(watermark))
@@ -55,9 +58,12 @@ def norm_space_watermark_embedding(signal, watermark, delta=0.03):
 
 def norm_space_watermark_detection(watermarked_signal, watermark_length=512, delta=0.03):
   '''
-  watermarked_signal - 1D numpy array representing watermarked signal
-  watermarl_length - an integer representing the length of the embedded watermark
-  delta - value of the delta parameter used for watermark embedding.
+  Parameters:
+    watermarked_signal - 1D numpy array
+    watermark_length - integer representing the length of the embedded watermark
+    delta - value of the delta parameter used for watermark embedding
+  Returns:
+    detected watermark - 1D numpy array
   '''
   segments = np.array_split(watermarked_signal, watermark_length)
   watermark_bits = []
