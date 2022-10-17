@@ -1,6 +1,13 @@
 # Audio watermarking
 Implementations of different audio watermarking techniques.
 
+## FSVC watermarking
+Paper: Desynchronization Attacks Resilient Watermarking Method Based on Frequency Singular Value Coefficient Modification https://ieeexplore.ieee.org/document/9468371
+
+## Patchwork multilayer watermarking
+Paper: Patchwork-Based Multilayer Audio Watermarking https://ieeexplore.ieee.org/document/8025572
+
+
 ## Norm space watermarking
 
 Paper: Novel secured scheme for blind audio/speech norm-space watermarking by Arnold algorithm https://doi.org/10.1016/j.sigpro.2018.08.011.
